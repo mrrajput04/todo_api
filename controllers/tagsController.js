@@ -1,4 +1,4 @@
-const { tagsSchema, todoSchema } = require("../models/tags");
+const { tagsSchema, todoSchema } = require("../models");
 
 exports.addTags = async (req, res) => {
   const userId = req.body._id;
@@ -11,8 +11,8 @@ exports.addTags = async (req, res) => {
     data.selectedTags.push(addr);
     await data.save();
     return res.status(200).json({
-      message: "item added successfully. ",
-      savedData: { tag_Id: data._id },
+      message: "item added successfully.",
+      savedData: { tag_Id: addr._id },
     });
   } catch (error) {
     res.status(400).json({ message: error.message });

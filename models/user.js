@@ -15,7 +15,7 @@ const userSchema = Schema({
     email:{
         type:String,
         required:true,
-        // unique:true,
+        unique:true,
         match:/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
     },
     password:{

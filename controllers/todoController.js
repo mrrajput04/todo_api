@@ -7,7 +7,7 @@ exports.addTodo = async (req, res) => {
   try {
     const user = userData.findById(Id)
     if(!user){
-      return CustomErrorHandler.notFound('user not found');
+      return CustomErrorHandler.notFound({message:'user not found'});
     }
     const todo = new todoSchema(req.body);
     const savedData = await todo.save();
